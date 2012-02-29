@@ -1,7 +1,7 @@
+
+
+/* First created by JCasGen Wed Feb 29 11:59:51 CET 2012 */
 package Germandeli;
-
-
-/* First created by JCasGen Wed Jan 11 17:36:18 CET 2012 */
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
@@ -12,8 +12,8 @@ import org.apache.uima.jcas.cas.StringArray;
 
 
 /** 
- * Updated by JCasGen Tue Feb 28 15:24:10 CET 2012
- * XML source: /Users/mjakasovic/Documents/ArbeitCoTeSys/uima-germandeli-scam/descriptors/GermandeliProduct.xml
+ * Updated by JCasGen Wed Feb 29 12:01:20 CET 2012
+ * XML source: /Users/mjakasovic/Documents/ArbeitCoTeSys/uima-prolog/uima-PrologInterface-Examples/descriptors/GermandeliProduct.xml
  * @generated */
 public class Product extends Annotation {
   /** @generated
@@ -95,16 +95,16 @@ public class Product extends Annotation {
    
     
   //*--------------*
-  //* Feature: Price
+  //* Feature: price
 
-  /** getter for Price - gets 
+  /** getter for price - gets 
    * @generated */
   public String getPrice() {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_price == null)
       jcasType.jcas.throwFeatMissing("price", "Germandeli.Product");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Product_Type)jcasType).casFeatCode_price);}
     
-  /** setter for Price - sets  
+  /** setter for price - sets  
    * @generated */
   public void setPrice(String v) {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_price == null)
@@ -113,16 +113,16 @@ public class Product extends Annotation {
    
     
   //*--------------*
-  //* Feature: Brand
+  //* Feature: brand
 
-  /** getter for Brand - gets 
+  /** getter for brand - gets 
    * @generated */
   public String getBrand() {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_brand == null)
       jcasType.jcas.throwFeatMissing("brand", "Germandeli.Product");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Product_Type)jcasType).casFeatCode_brand);}
     
-  /** setter for Brand - sets  
+  /** setter for brand - sets  
    * @generated */
   public void setBrand(String v) {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_brand == null)
@@ -131,16 +131,16 @@ public class Product extends Annotation {
    
     
   //*--------------*
-  //* Feature: Name
+  //* Feature: name
 
-  /** getter for Name - gets 
+  /** getter for name - gets 
    * @generated */
   public String getName() {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_name == null)
       jcasType.jcas.throwFeatMissing("name", "Germandeli.Product");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Product_Type)jcasType).casFeatCode_name);}
     
-  /** setter for Name - sets  
+  /** setter for name - sets  
    * @generated */
   public void setName(String v) {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_name == null)
@@ -149,16 +149,16 @@ public class Product extends Annotation {
    
     
   //*--------------*
-  //* Feature: WeightInG
+  //* Feature: weightInG
 
-  /** getter for WeightInG - gets 
+  /** getter for weightInG - gets 
    * @generated */
   public float getWeightInG() {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_weightInG == null)
       jcasType.jcas.throwFeatMissing("weightInG", "Germandeli.Product");
     return jcasType.ll_cas.ll_getFloatValue(addr, ((Product_Type)jcasType).casFeatCode_weightInG);}
     
-  /** setter for WeightInG - sets  
+  /** setter for weightInG - sets  
    * @generated */
   public void setWeightInG(float v) {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_weightInG == null)
@@ -167,16 +167,16 @@ public class Product extends Annotation {
    
     
   //*--------------*
-  //* Feature: WeightInOZ
+  //* Feature: weightInOZ
 
-  /** getter for WeightInOZ - gets 
+  /** getter for weightInOZ - gets 
    * @generated */
   public float getWeightInOZ() {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_weightInOZ == null)
       jcasType.jcas.throwFeatMissing("weightInOZ", "Germandeli.Product");
     return jcasType.ll_cas.ll_getFloatValue(addr, ((Product_Type)jcasType).casFeatCode_weightInOZ);}
     
-  /** setter for WeightInOZ - sets  
+  /** setter for weightInOZ - sets  
    * @generated */
   public void setWeightInOZ(float v) {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_weightInOZ == null)
@@ -203,16 +203,16 @@ public class Product extends Annotation {
    
     
   //*--------------*
-  //* Feature: Id
+  //* Feature: id
 
-  /** getter for Id - gets 
+  /** getter for id - gets 
    * @generated */
   public String getId() {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_id == null)
       jcasType.jcas.throwFeatMissing("id", "Germandeli.Product");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Product_Type)jcasType).casFeatCode_id);}
     
-  /** setter for Id - sets  
+  /** setter for id - sets  
    * @generated */
   public void setId(String v) {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_id == null)
@@ -221,21 +221,21 @@ public class Product extends Annotation {
    
     
   //*--------------*
-  //* Feature: Descrtiption
+  //* Feature: description
 
-  /** getter for Descrtiption - gets Product description
+  /** getter for description - gets Product description
    * @generated */
-  public String getDescrtiption() {
-    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_descrtiption == null)
-      jcasType.jcas.throwFeatMissing("descrtiption", "Germandeli.Product");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Product_Type)jcasType).casFeatCode_descrtiption);}
+  public String getDescription() {
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_description == null)
+      jcasType.jcas.throwFeatMissing("description", "Germandeli.Product");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Product_Type)jcasType).casFeatCode_description);}
     
-  /** setter for Descrtiption - sets Product description 
+  /** setter for description - sets Product description 
    * @generated */
-  public void setDescrtiption(String v) {
-    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_descrtiption == null)
-      jcasType.jcas.throwFeatMissing("descrtiption", "Germandeli.Product");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Product_Type)jcasType).casFeatCode_descrtiption, v);}    
+  public void setDescription(String v) {
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_description == null)
+      jcasType.jcas.throwFeatMissing("description", "Germandeli.Product");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Product_Type)jcasType).casFeatCode_description, v);}    
   }
 
     

@@ -106,7 +106,6 @@ private Boolean ingredientsFound = false;
 		//check if root was found
 		if (bodyElement != null) {
 			List<Element> bodyElements = bodyElement.getAllElements();
-			int count = 0;
 			String productName = null;
 			String brand = null;
 			String id = null;
@@ -258,7 +257,6 @@ private Boolean ingredientsFound = false;
 				 * Token extracting done
 				 * check if everything is extracted
 				 */				
-				count++; //debugging
 			}
 			//System.out.println(count);
 			/*
@@ -306,7 +304,7 @@ private Boolean ingredientsFound = false;
 				product.setPrice(price);
 			}
 			if (descrFound) {
-				product.setDescrtiption(description);
+				product.setDescription(description);
 			}
 			if (!ingredientsFound && descrFound) {
 				Matcher ingreMatcher = descrIngred.matcher(description);
@@ -320,113 +318,6 @@ private Boolean ingredientsFound = false;
 			}
 			product.addToIndexes();
 		}
-		
-		/*
-			
-			//nameElement.
-			String cssClass = nameElement.getAttributeValue("class");
-			//System.out.println(cssClass);
-			if (cssClass == null) continue;
-			System.out.println(cssClass);
-			if (!cssClass.equals("title-inner")) continue;
-			//Name tag found
-			else {
-				String productName = nameElement.getContent().getTextExtractor().toString();
-				System.out.println("Extracted with tag identifiers: " + productName + cssClass);
-			}
-		}*/
-		
-		
-		
-		
-		
-		
-		/*
-		int begin = 0;
-		Product product = new Product(aJCas);
-		Matcher nameMatcher = name.matcher(docText);
-		//System.out.println(docText);
-		if (nameMatcher.find()) {
-			System.out.println(nameMatcher.group(1));
-			product.setName(nameMatcher.group(1));
-			product.setBegin(nameMatcher.start(1));
-			begin = nameMatcher.end(1);
-			Matcher sensMatcher = hsensitiv.matcher(docText.substring(begin,docText.length()));
-			if (sensMatcher.find()) {
-				System.out.println(sensMatcher.group(1));
-				if (sensMatcher.group(1).endsWith(sensitiv1)) {
-					product.setPerishability((short) 1);
-					//System.out.println(1);
-				}
-				else if (sensMatcher.group(1).endsWith(sensitiv2)) {
-					product.setPerishability((short) 2);
-					//System.out.println(2);
-				}
-				else if (sensMatcher.group(1).endsWith(sensitiv3)) {
-					product.setPerishability((short) 3);
-					//System.out.println(3);
-				}
-				else if	(sensMatcher.group(1).endsWith(sensitiv4)) {
-					product.setPerishability((short) 4);
-					//System.out.println(4);
-				}
-				else {
-					product.setPerishability((short) 5);
-					//System.out.println(5);
-				}
-				begin = sensMatcher.end(1);
-			}
-			Matcher brandMatcher = brand.matcher(docText.substring(begin,docText.length()));
-			if (brandMatcher.find()) {
-				System.out.println(brandMatcher.group(1));
-				product.setBrand(brandMatcher.group(1));
-				begin = brandMatcher.end(1);
-			}
-			Matcher idMatcher = id.matcher(docText.substring(begin,docText.length()));
-			if (idMatcher.find()) {
-				System.out.println(idMatcher.group(1));
-				product.setId(idMatcher.group(1));
-				begin = idMatcher.end(1);
-				
-			}
-			Matcher weightMatcher = weight.matcher(docText.substring(begin,docText.length()));
-			if (weightMatcher.find()) {
-				System.out.println(weightMatcher.group(1));
-				float weight[] = getGAndOZ(weightMatcher.group(1));
-				product.setWeightInG(weight[0]);
-				product.setWeightInOZ(weight[1]);
-				begin = weightMatcher.end(1);
-			}
-			Matcher priceMatcher = price.matcher(docText.substring(begin,docText.length()));
-			
-			if (priceMatcher.find()) {
-				System.out.println(priceMatcher.group(1));
-				product.setPrice(priceMatcher.group(1));
-				begin = priceMatcher.end(1);
-			}
-			Matcher descripMatcher = description.matcher(docText.substring(begin,docText.length()));
-			if (descripMatcher.find()) {
-				System.out.println("finddes" + descripMatcher.group(1));
-				product.setDescrtiption(descripMatcher.group(1));
-				begin = descripMatcher.end(1);
-			}
-			Matcher ingreMatcher = ingredients.matcher(docText.substring(begin,docText.length()));
-			if (ingreMatcher.find()) {
-				//System.out.println(ingreMatcher.group(1).trim());
-				product.setIngredients(makeStringList(ingreMatcher.group(1),aJCas));
-				begin = ingreMatcher.end(1);
-			}
-			else {
-				ingreMatcher = descrIngred.matcher(docText.substring(descripMatcher.start(1),docText.length()));
-				if (ingreMatcher.find()) {
-					product.setIngredients(makeStringList(ingreMatcher.group(1),aJCas));
-					begin = ingreMatcher.end(1);
-				}
-				
-			}
-			product.setEnd(begin);
-			product.addToIndexes();
-		}*/
 	}
 	/**
 	 * Makes a list from a string 

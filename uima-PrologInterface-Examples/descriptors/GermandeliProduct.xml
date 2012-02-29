@@ -51,7 +51,7 @@
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>descrtiption</name>
+          <name>description</name>
           <description>Product description</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>

@@ -1,6 +1,6 @@
-package Germandeli;
 
-/* First created by JCasGen Wed Jan 11 17:36:18 CET 2012 */
+/* First created by JCasGen Wed Feb 29 11:59:51 CET 2012 */
+package Germandeli;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Tue Feb 28 15:24:10 CET 2012
+ * Updated by JCasGen Wed Feb 29 12:01:20 CET 2012
  * @generated */
 public class Product_Type extends Annotation_Type {
   /** @generated */
@@ -205,20 +205,20 @@ public class Product_Type extends Annotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_descrtiption;
+  final Feature casFeat_description;
   /** @generated */
-  final int     casFeatCode_descrtiption;
+  final int     casFeatCode_description;
   /** @generated */ 
-  public String getDescrtiption(int addr) {
-        if (featOkTst && casFeat_descrtiption == null)
-      jcas.throwFeatMissing("descrtiption", "Germandeli.Product");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_descrtiption);
+  public String getDescription(int addr) {
+        if (featOkTst && casFeat_description == null)
+      jcas.throwFeatMissing("description", "Germandeli.Product");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_description);
   }
   /** @generated */    
-  public void setDescrtiption(int addr, String v) {
-        if (featOkTst && casFeat_descrtiption == null)
-      jcas.throwFeatMissing("descrtiption", "Germandeli.Product");
-    ll_cas.ll_setStringValue(addr, casFeatCode_descrtiption, v);}
+  public void setDescription(int addr, String v) {
+        if (featOkTst && casFeat_description == null)
+      jcas.throwFeatMissing("description", "Germandeli.Product");
+    ll_cas.ll_setStringValue(addr, casFeatCode_description, v);}
     
   
 
@@ -263,8 +263,8 @@ public class Product_Type extends Annotation_Type {
     casFeatCode_id  = (null == casFeat_id) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_id).getCode();
 
  
-    casFeat_descrtiption = jcas.getRequiredFeatureDE(casType, "descrtiption", "uima.cas.String", featOkTst);
-    casFeatCode_descrtiption  = (null == casFeat_descrtiption) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_descrtiption).getCode();
+    casFeat_description = jcas.getRequiredFeatureDE(casType, "description", "uima.cas.String", featOkTst);
+    casFeatCode_description  = (null == casFeat_description) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_description).getCode();
 
   }
 }
