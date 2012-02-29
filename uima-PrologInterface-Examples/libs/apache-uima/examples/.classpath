@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="UIMA_HOME/lib/uima-core.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/mjakasovic/Arbeit/apache-uima/docs/d/api/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="UIMA_HOME/lib/uima-document-annotation.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Program Files/apache-uima/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="UIMA_HOME/lib/uima-cpe.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Program Files/apache-uima/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="UIMA_HOME/lib/uima-tools.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Program Files/apache-uima/docs/api"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="UIMA_HOME/lib/uima-adapter-vinci.jar"/>
+	<classpathentry kind="var" path="UIMA_HOME/lib/uima-adapter-soap.jar"/>
+	<classpathentry kind="var" path="UIMA_HOME/lib/jVinci.jar"/>
+	<classpathentry kind="lib" path="resources"/>
+	<classpathentry kind="lib" path="/uima-germandeli-scam/bin"/>
+	<classpathentry kind="lib" path="/Users/mjakasovic/Arbeit/jericho-html-3-1.2/dist/jericho-html-3.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

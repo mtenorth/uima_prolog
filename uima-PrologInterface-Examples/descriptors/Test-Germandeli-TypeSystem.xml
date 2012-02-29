@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>Test-Germandeli-TypeSystem</name>
+  <description>Testfilesystem for the Germandeli-TypeSystem</description>
+  <version>1.0</version>
+  <vendor>Maximilian Jakasovic</vendor>
+  <types>
+    <typeDescription>
+      <name>Germandeli.Food</name>
+      <description>Product in the Germandeli Webstore</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Brand</name>
+          <description>The Products Brand</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Name</name>
+          <description>The products name</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Category</name>
+          <description>The Products Category</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

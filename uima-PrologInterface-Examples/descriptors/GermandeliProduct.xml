@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>GermandeliProduct</name>
+  <description>A Germandeli Product</description>
+  <version>1.0</version>
+  <vendor>Maximilian Jakasovic</vendor>
+  <types>
+    <typeDescription>
+      <name>Germandeli.Product</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>ingredients</name>
+          <description/>
+          <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>price</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>brand</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>name</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>weightInG</name>
+          <description/>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>weightInOZ</name>
+          <description/>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>perishability</name>
+          <description/>
+          <rangeTypeName>uima.cas.Short</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>id</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>descrtiption</name>
+          <description>Product description</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

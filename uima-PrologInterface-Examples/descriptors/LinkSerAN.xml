@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>LinkSerAN</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>LinkSerAN</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import location="LinkDescriptor.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type>HyperLink</type>
+          <feature>HyperLink:URL</feature>
+          <feature>HyperLink:Name</feature>
+          <feature>HyperLink:end</feature>
+          <feature>HyperLink:begin</feature>
+        </inputs>
+        <outputs>
+          <type>HyperLink</type>
+          <feature>HyperLink:URL</feature>
+          <feature>HyperLink:Name</feature>
+          <feature>HyperLink:end</feature>
+          <feature>HyperLink:begin</feature>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
