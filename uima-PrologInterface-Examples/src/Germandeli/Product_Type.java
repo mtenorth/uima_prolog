@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Wed Feb 29 11:59:51 CET 2012 */
+/* First created by JCasGen Wed Feb 29 14:15:25 CET 2012 */
 package Germandeli;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Wed Feb 29 12:01:20 CET 2012
+ * Updated by JCasGen Wed Feb 29 14:15:25 CET 2012
  * @generated */
 public class Product_Type extends Annotation_Type {
   /** @generated */
@@ -64,7 +64,7 @@ public class Product_Type extends Annotation_Type {
     if (lowLevelTypeChecks)
       return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_ingredients), i, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_ingredients), i);
-  return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_ingredients), i);
+	return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_ingredients), i);
   }
    
   /** @generated */ 
@@ -221,6 +221,61 @@ public class Product_Type extends Annotation_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_description, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_sourceUrl;
+  /** @generated */
+  final int     casFeatCode_sourceUrl;
+  /** @generated */ 
+  public String getSourceUrl(int addr) {
+        if (featOkTst && casFeat_sourceUrl == null)
+      jcas.throwFeatMissing("sourceUrl", "Germandeli.Product");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_sourceUrl);
+  }
+  /** @generated */    
+  public void setSourceUrl(int addr, String v) {
+        if (featOkTst && casFeat_sourceUrl == null)
+      jcas.throwFeatMissing("sourceUrl", "Germandeli.Product");
+    ll_cas.ll_setStringValue(addr, casFeatCode_sourceUrl, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_supertypes;
+  /** @generated */
+  final int     casFeatCode_supertypes;
+  /** @generated */ 
+  public int getSupertypes(int addr) {
+        if (featOkTst && casFeat_supertypes == null)
+      jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_supertypes);
+  }
+  /** @generated */    
+  public void setSupertypes(int addr, int v) {
+        if (featOkTst && casFeat_supertypes == null)
+      jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    ll_cas.ll_setRefValue(addr, casFeatCode_supertypes, v);}
+    
+   /** @generated */
+  public String getSupertypes(int addr, int i) {
+        if (featOkTst && casFeat_supertypes == null)
+      jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_supertypes), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_supertypes), i);
+	return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_supertypes), i);
+  }
+   
+  /** @generated */ 
+  public void setSupertypes(int addr, int i, String v) {
+        if (featOkTst && casFeat_supertypes == null)
+      jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_supertypes), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_supertypes), i);
+    ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_supertypes), i, v);
+  }
+ 
 
 
 
@@ -265,6 +320,14 @@ public class Product_Type extends Annotation_Type {
  
     casFeat_description = jcas.getRequiredFeatureDE(casType, "description", "uima.cas.String", featOkTst);
     casFeatCode_description  = (null == casFeat_description) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_description).getCode();
+
+ 
+    casFeat_sourceUrl = jcas.getRequiredFeatureDE(casType, "sourceUrl", "uima.cas.String", featOkTst);
+    casFeatCode_sourceUrl  = (null == casFeat_sourceUrl) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sourceUrl).getCode();
+
+ 
+    casFeat_supertypes = jcas.getRequiredFeatureDE(casType, "supertypes", "uima.cas.StringArray", featOkTst);
+    casFeatCode_supertypes  = (null == casFeat_supertypes) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_supertypes).getCode();
 
   }
 }

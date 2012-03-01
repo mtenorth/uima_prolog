@@ -6,27 +6,23 @@ import java.util.regex.Matcher;
 import net.htmlparser.jericho.*;
 import java.util.regex.Pattern;
 
+import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.jcas.cas.StringList;
+import org.apache.uima.resource.ResourceInitializationException;
 
 public class GermanDeliProductAE extends JCasAnnotator_ImplBase {
-//private Pattern name = Pattern.compile("<div id=\"item-contenttitle\"><div class=\"title\"><div class=\"title-inner\">([^<]+)</div>");
-//private Pattern hsensitiv = Pattern.compile("<div class=\"perishable\"><img src=\"([^\"]+)");
-//private Pattern brand = Pattern.compile("class=\"brand\">.*?<td>([^<]+)");
-//private Pattern id = Pattern.compile("Item #:</th><td>([^<]+)</td>");
-//private Pattern weight = Pattern.compile("Weight/Size:</th><td>([^<]+)</td>");
-//private Pattern price = Pattern.compile("Our Price:</th><td>([^<]+)</td>");
-//private Pattern ingredients = Pattern.compile("<div name=\"ingredients\".*?-->([^<]+)");
-//private Pattern description = Pattern.compile("name=\"description\".*?-->([^<]+)");
 private Pattern descrIngred = Pattern.compile("Ingredients: (.*?)\\.");
 private final String sensitiv1 = "gdcom_2194_304287"; // 1 not sens.
 private final String sensitiv2 = "gdcom_2194_844664"; // 2 heat sens.
 private final String sensitiv3 = "not defined"; //3
 private final String sensitiv4 = "gdcom_2194_59878433"; //4 frozen
 
+private static final String PARAM_SUPERTYPES = "SuperTypes";
+private String superTypesInput = "";
 /*
  *Specifiers to find the feature in html source.
  *ToDo: Make a template
@@ -51,6 +47,8 @@ private String descrAttributeSpecifier = "name";
 private String descrAttributeSpecifierValue = "description";
 private String ingrAttributeSpecifier = "name";
 private String ingrAttributeSpecifierValue = "ingredients";
+private String supertypeAttributeSpecifier = "class";
+private String supertypeAttributeSpecifierValue = "scBreadcrumbs";
 
 /*
  * Flags
@@ -69,7 +67,14 @@ private Boolean ingredientsFound = false;
 
 
 	
-
+	/*
+	 * To do
+	public void initialize(UimaContext aUimaContext) throws ResourceInitializationException {
+		// TODO Auto-generated method stub
+		super.initialize(aUimaContext);
+		superTypesInput= (String)aUimaContext.getConfigParameterValue(PARAM_SUPERTYPES);
+	}
+  	*/
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		String docText = aJCas.getDocumentText();
 		initFlags();
@@ -114,15 +119,40 @@ private Boolean ingredientsFound = false;
 			String description = null;
 			String ingredients = null;
 			String pers = null;
+			String superTypes = null;
 			Product product = new Product(aJCas);
 			aJCas.setDocumentLanguage("en");
 			for (Element tmpElement : bodyElements) {
+				
+				//get supertypes
+				if (superTypes == null) {
+					String supertypeElementAttr = tmpElement.getAttributeValue(supertypeAttributeSpecifier);
+					//System.out.println(nameElementAttr);
+					product.setBegin(tmpElement.getBegin());
+					if (supertypeElementAttr != null) {
+						if (supertypeElementAttr.equals(supertypeAttributeSpecifierValue)) {
+							//extract the supertypes
+							List<Element> supertypeElements = tmpElement.getAllElements(HTMLElementName.A);
+							superTypes = "";
+							for (Element tmpSupertype : supertypeElements) {
+								String tmp = tmpSupertype.getContent().getTextExtractor().toString();
+								if (tmp != null) {
+									if (!tmp.equals("Home")) {
+										superTypes = superTypes + tmp + ",";
+									}
+								}
+							}
+							System.out.println("Extracted Supertypes: " + superTypes);
+							
+						}
+					}
+				}
 				
 				//Get the name 
 				if (!nameFound) {
 					String nameElementAttr = tmpElement.getAttributeValue(nameAttributeSpecifier);
 					//System.out.println(nameElementAttr);
-					product.setBegin(tmpElement.getBegin());
+					//product.setBegin(tmpElement.getBegin());
 					if (nameElementAttr != null) {
 						if (nameElementAttr.equals(nameAttributeSpecifierValue)) {
 							productName = tmpElement.getContent().getTextExtractor().toString();
@@ -264,6 +294,9 @@ private Boolean ingredientsFound = false;
 			 * check if everything is extracted
 			 */		
 			
+			if (superTypes != null) {
+				product.setSupertypes(makeStringList(superTypes.substring(0, superTypes.length()),aJCas));
+			}
 			if (nameFound) {
 				product.setName(productName);
 			}

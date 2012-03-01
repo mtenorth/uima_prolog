@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Wed Feb 29 11:59:51 CET 2012 */
+/* First created by JCasGen Wed Feb 29 14:15:25 CET 2012 */
 package Germandeli;
 
 import org.apache.uima.jcas.JCas; 
@@ -12,7 +12,7 @@ import org.apache.uima.jcas.cas.StringArray;
 
 
 /** 
- * Updated by JCasGen Wed Feb 29 12:01:20 CET 2012
+ * Updated by JCasGen Wed Feb 29 14:15:25 CET 2012
  * XML source: /Users/mjakasovic/Documents/ArbeitCoTeSys/uima-prolog/uima-PrologInterface-Examples/descriptors/GermandeliProduct.xml
  * @generated */
 public class Product extends Annotation {
@@ -236,6 +236,58 @@ public class Product extends Annotation {
     if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_description == null)
       jcasType.jcas.throwFeatMissing("description", "Germandeli.Product");
     jcasType.ll_cas.ll_setStringValue(addr, ((Product_Type)jcasType).casFeatCode_description, v);}    
+   
+    
+  //*--------------*
+  //* Feature: sourceUrl
+
+  /** getter for sourceUrl - gets The sourceUrl
+   * @generated */
+  public String getSourceUrl() {
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_sourceUrl == null)
+      jcasType.jcas.throwFeatMissing("sourceUrl", "Germandeli.Product");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Product_Type)jcasType).casFeatCode_sourceUrl);}
+    
+  /** setter for sourceUrl - sets The sourceUrl 
+   * @generated */
+  public void setSourceUrl(String v) {
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_sourceUrl == null)
+      jcasType.jcas.throwFeatMissing("sourceUrl", "Germandeli.Product");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Product_Type)jcasType).casFeatCode_sourceUrl, v);}    
+   
+    
+  //*--------------*
+  //* Feature: supertypes
+
+  /** getter for supertypes - gets The supertypes
+   * @generated */
+  public StringArray getSupertypes() {
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_supertypes == null)
+      jcasType.jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    return (StringArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Product_Type)jcasType).casFeatCode_supertypes)));}
+    
+  /** setter for supertypes - sets The supertypes 
+   * @generated */
+  public void setSupertypes(StringArray v) {
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_supertypes == null)
+      jcasType.jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Product_Type)jcasType).casFeatCode_supertypes, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for supertypes - gets an indexed value - The supertypes
+   * @generated */
+  public String getSupertypes(int i) {
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_supertypes == null)
+      jcasType.jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Product_Type)jcasType).casFeatCode_supertypes), i);
+    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Product_Type)jcasType).casFeatCode_supertypes), i);}
+
+  /** indexed setter for supertypes - sets an indexed value - The supertypes
+   * @generated */
+  public void setSupertypes(int i, String v) { 
+    if (Product_Type.featOkTst && ((Product_Type)jcasType).casFeat_supertypes == null)
+      jcasType.jcas.throwFeatMissing("supertypes", "Germandeli.Product");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Product_Type)jcasType).casFeatCode_supertypes), i);
+    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Product_Type)jcasType).casFeatCode_supertypes), i, v);}
   }
 
     

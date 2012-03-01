@@ -39,33 +39,33 @@ public class ProductSaveToXMLAE extends JCasAnnotator_ImplBase {
 		if (!init) {
 			try {
 				initialize();
-				init = true;
-				// retreive the filename of the input file from the CAS
-			    FSIterator it = aJCas.getAnnotationIndex(Product.type).iterator();
-			    File outFile = null;
-			    if (it.hasNext()) {
-			    	Product fileLoc = (Product) it.next();
-			        outFile = new File(mOutputDir, fileLoc.getName() + ".xml");
-			    }
-			    if (outFile == null) {
-			      outFile = new File(mOutputDir, "doc" + mDocNum++ + ".xml");
-			    }
-			    // serialize XCAS and write to output file
-			    
-			    try {
-					writeXCas(aJCas.getCas(), outFile);
-				} catch (IOException e) {
-					System.err.println("Could not write to output file");
-					e.printStackTrace();
-				} catch (SAXException e) {
-					System.out.println("SAX Failure");
-					e.printStackTrace();
-				}
 			} catch (ResourceInitializationException e) {
-				System.err.println("Could not create output file");
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			init = true;
 		}
+			// retreive the filename of the input file from the CAS
+			FSIterator it = aJCas.getAnnotationIndex(Product.type).iterator();
+			File outFile = null;
+			if (it.hasNext()) {
+				Product fileLoc = (Product) it.next();
+			    outFile = new File(mOutputDir, fileLoc.getName() + ".xml");
+			}
+			if (outFile == null) {
+			  outFile = new File(mOutputDir, "doc" + mDocNum++ + ".xml");
+			}
+			// serialize XCAS and write to output file
+			
+			try {
+				writeXCas(aJCas.getCas(), outFile);
+			} catch (IOException e) {
+				System.err.println("Could not write to output file");
+				e.printStackTrace();
+			} catch (SAXException e) {
+				System.out.println("SAX Failure");
+				e.printStackTrace();
+			}
 		
 	}
 	/**

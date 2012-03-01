@@ -57,7 +57,7 @@ import org.apache.uima.util.XmlCasSerializer;
 
 /**
  * @author Paul Fodor 
- *
+ * @author Maximilian Jakasovic
  */
 public class PrologCAS {
 	Logger logger = UIMAFramework.getLogger(PrologCAS.class);
