@@ -6,7 +6,7 @@
   <vendor>Maximilian Jakasovic</vendor>
   <types>
     <typeDescription>
-      <name>Germandeli.Product</name>
+      <name>germandeli.Product</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>

@@ -65,9 +65,9 @@ public class PrologCAS {
 	private PrologCAS(){
 		//initialize the Prolog engine
 		JPL.init();
-		// consult Prolog rule file into the Prolog system
-		//Query consultQuery=new Query("consult('"+ruleFileName+"')");
-		//logger.log(Level.ALL,"consult: " + (consultQuery.hasSolution() ? "succeded" : "failed"));
+		//consult Prolog rule file into the Prolog system
+		Query consultQuery=new Query("consult('"+ruleFileName+"')");
+		logger.log(Level.ALL,"consult: " + (consultQuery.hasSolution() ? "succeded" : "failed"));
 	}
 	
 	private static String ruleFileName = new String();
@@ -761,8 +761,8 @@ public class PrologCAS {
 			String typeFileName= "descriptors/GermandeliProduct.xml";
 			String inputFileName= "results/PrologTest.xml";;
 			String prologFileName= "results/PrologTest.pl";
-			String newRuleFileName= "empty";
-			String outputFileName=new String();
+			String newRuleFileName= "prologRuleFiles/basicRuleFile.pl";
+			String outputFileName= "newCas.xml";
 			/*
 			Options options = new Options();
 			options.addOption("t", true, "Type file");
@@ -810,23 +810,24 @@ public class PrologCAS {
 			pCAS.transferCasToProlog(prologPredicates);
 			
 			//mycas
+			
 			Variable X = new Variable();
 			Variable Y = new Variable();
 			Variable Z = new Variable();
-			Query testQuery = new Query("cas:property(X,Y,Z)");
+			Query testQuery = new Query("queryPrologCas(X)");
 			Hashtable[] solutions = testQuery.allSolutions();
 			for (int i = 0; i < solutions.length;i++) {
 				System.out.print("X: "+solutions[i].get("X")+" ");
-				System.out.print("Y: "+solutions[i].get("Y")+" ");
-				System.out.println("Z: "+solutions[i].get("Z")+" ");
+				//System.out.print("Y: "+solutions[i].get("Y")+" ");
+				//System.out.println("Z: "+solutions[i].get("Z")+" ");
 			}
-			/*
+			
 			// query the file to get the new "FeatureStructure"s
 			String queryRuleString=new String("queryPrologCas(L)");
 			String queryVariable=new String("L");
 			Query queryRule=new Query(queryRuleString);
-			//Compound result = (Compound)(queryRule.oneSolution().get(queryVariable));
-			*//*
+			Compound result = (Compound)(queryRule.oneSolution().get(queryVariable));
+			
 			// Retrieve the new feature structures from the Prolog result and add them into the cas
 			pCAS.retrievePrologQueryResults(result,cas);
 			
@@ -834,7 +835,7 @@ public class PrologCAS {
 			File xcasOutFile=new File(outputFileName);
 			FileOutputStream xcasOutStream = new FileOutputStream(xcasOutFile);
 			XmlCasSerializer.serialize(cas,xcasOutStream);
-			if (xcasOutStream != null) xcasOutStream.close();*/
+			if (xcasOutStream != null) xcasOutStream.close();
 		} catch(Exception e) {
 				e.printStackTrace();
 		}
