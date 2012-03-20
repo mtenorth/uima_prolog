@@ -1,3 +1,0 @@
-@call bat_lib\run FormFieldCSVOutput %*
-@echo Opening FormData.csv...
-@start FormData.csv
